@@ -35,13 +35,13 @@ class Users_Model extends CI_Model
         ),
 	);
 
-    function check_login()
+    public function check_login()
 	{
         $email = $this->input->post('email');
 		$password = $this->input->post('password');
         $remember = (bool) $this->input->post('remember_me');
 
-        if ($this->ion_auth->login($this->input->post('email'), $this->input->post('password'), $remember))
+        if ($this->ion_auth->login($email, $password, $remember))
         {
             $response = TRUE;
         }
@@ -55,7 +55,28 @@ class Users_Model extends CI_Model
         return $response;
 	}
 
-    function generate_key($id)
+    public function check_login_username()
+	{
+        $username = $this->input->post('username');
+		$password = $this->input->post('password');
+        $remember = (bool) $this->input->post('remember_me');
+
+        $this->ion_auth->identity_column = 'username';
+        if ($this->ion_auth->login($username, $password, $remember))
+        {
+            $response = TRUE;
+        }
+        else
+        {
+            $this->ion_auth->set_error_delimiters('', '');
+            $this->form_validation->set_message('check_login_username', $this->ion_auth->errors());
+			$response = FALSE;
+        }
+
+        return $response;
+	}
+
+    public function generate_key($id)
     {
         $key = $id.strtotime(date('Y-m-d H:i:s'));
         $key = md5($key);
@@ -76,7 +97,7 @@ class Users_Model extends CI_Model
         return $key;
     }
 
-    function check_unique_email()
+    public function check_unique_email()
 	{
 		$id = $this->input->post('user_id');
 		$email = $this->input->post('email');
@@ -97,7 +118,7 @@ class Users_Model extends CI_Model
 		return $response;
 	}
 
-    function check_unique_username()
+    public function check_unique_username()
 	{
 		$id = $this->input->post('user_id');
 		$username = $this->input->post('username');
@@ -118,14 +139,14 @@ class Users_Model extends CI_Model
 		return $response;
 	}
 
-	function count_unique_email($id, $email)
+	public function count_unique_email($id, $email)
 	{
 		$this->db->where('email', $email);
 		$this->db->where_not_in('id', $id);
 		return $this->db->count_all_results($this->table);
 	}
 
-    function count_unique_username($id, $username)
+    public function count_unique_username($id, $username)
 	{
 		$this->db->where('username', $username);
 		$this->db->where_not_in('id', $id);

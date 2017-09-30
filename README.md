@@ -19,3 +19,6 @@ Demo : <a href="https://codeigniter3app-redzjovi.c9users.io/backend/admin">https
 ## Included libraries
 <a href="https://github.com/benedmunds/CodeIgniter-Ion-Auth">CodeIgniter-Ion-Auth</a><br />
 <a href="https://github.com/chriskacerguis/codeigniter-restserver">codeigniter-restserver</a>
+
+## Included third party
+- [codeigniter-forensics](https://github.com/lonnieezell/codeigniter-forensics)

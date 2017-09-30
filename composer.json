@@ -12,7 +12,8 @@
 	},
 	"require": {
 		"php": ">=5.2.4",
-		"chriskacerguis/codeigniter-restserver": "^3.0",
+        "chriskacerguis/codeigniter-restserver": "^3.0",
+        "lonnieezell/codeigniter-forensics": "dev-master",
 		"symfony/var-dumper": "^3.3",
 		"vlucas/phpdotenv": "^2.4"
 	},

@@ -14,11 +14,12 @@ Demo : <a href="https://codeigniter3app-redzjovi.c9users.io/backend/admin">https
 "php index.php migrate version 3"
 
 ## Included hooks
-<a href="https://github.com/johngerome/CodeIgniter-Minifyhtml-hooks">CodeIgniter-Minifyhtml-hooks</a><br />
+- [CodeIgniter-Minifyhtml-hooks](https://github.com/johngerome/CodeIgniter-Minifyhtml-hooks)
 
 ## Included libraries
-<a href="https://github.com/benedmunds/CodeIgniter-Ion-Auth">CodeIgniter-Ion-Auth</a><br />
-<a href="https://github.com/chriskacerguis/codeigniter-restserver">codeigniter-restserver</a>
+- [CodeIgniter-Ion-Auth](https://github.com/benedmunds/CodeIgniter-Ion-Auth)
+- [codeigniter-restserver](https://github.com/chriskacerguis/codeigniter-restserver)
+
 
 ## Included third party
 - [codeigniter-forensics](https://github.com/lonnieezell/codeigniter-forensics)

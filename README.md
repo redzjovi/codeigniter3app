@@ -18,6 +18,7 @@ Demo : <a href="https://codeigniter3app-redzjovi.c9users.io/backend/admin">https
 
 ## Included libraries
 - [CodeIgniter-Ion-Auth](https://github.com/benedmunds/CodeIgniter-Ion-Auth)
+- [codeigniter-recaptcha](https://github.com/hok00age/codeigniter-recaptcha)
 - [codeigniter-restserver](https://github.com/chriskacerguis/codeigniter-restserver)
 
 

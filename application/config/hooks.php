@@ -18,9 +18,9 @@ $hook['display_override'] = array(
     'filepath' => 'hooks',
     'params' => array()
 );
-$hook['post_controller'] = function() {
+$hook['post_controller'] = function () {
     $ci =& get_instance();
-    ($ci->input->is_ajax_request()) ?: $ci->output->enable_profiler((getenv('PROFILER') == 'true'));
+    $ci->input->is_ajax_request() || $ci->input->is_cli_request() ?: $ci->output->enable_profiler(filter_var(getenv('PROFILER'), FILTER_VALIDATE_BOOLEAN));
 };
 $hook['post_controller_constructor'] = array(
     'class' => 'Language_hooks',

@@ -74,12 +74,12 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> '',
+	'dsn'	=> getenv('DB_DSN'),
     'host' => getenv('DB_HOST'),
     'username' => getenv('DB_USERNAME'),
     'password' => getenv('DB_PASSWORD'),
     'database' => getenv('DB_DATABASE'),
-	'dbdriver' => 'mysqli',
+	'dbdriver' => getenv('DB_DRIVER'),
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
